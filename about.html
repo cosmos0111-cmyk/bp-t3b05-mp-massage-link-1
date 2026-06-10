@@ -3,112 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[SYSTEM_REPORT] 마포 마사지 가성비 정밀 분석서 - about</title>
-    <meta name="description" content="마포 마사지의 정찰 운영 요약 리포트! 엘든링 데이터마이닝 공간 안마와 대뇌 이완 물리 법칙을 담은 극비 요약서.">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <title>마포 마사지 링크 | 정보</title>
+    <meta name="description" content="마포 마사지 링크 정보 페이지 - 위치, 가격, 서비스 상세. 형님들이 직접 확인하고 인증한 마포 마사지샵의 모든 것.">
+    <meta name="keywords" content="마포 마사지, 마포 마사지 링크, 마사지 정보, 마포 마사지 위치, 마포 마사지 가격, 마사지 서비스">
+    <link rel="canonical" href="https://t3b05-mp-massage-link-1.vercel.app/info">
+    <meta property="og:title" content="마포 마사지 링크 | 정보">
+    <meta property="og:description" content="마포 형님들이 인정한 진짜 마사지. 상세 정보와 가격, 위치까지 한눈에 확인하세요.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <style>
-        body {
-            background-color: #0d0216;
-            color: #e2e8f0;
-            font-family: 'Outfit', 'Inter', sans-serif;
+        /* Brutalist Avant-Garde System - kr-acid-yellow theme */
+        * {
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.8;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .report-shell {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #16062a;
-            border: 1px solid #4a034f;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(193, 0, 255, 0.15);
+
+        body {
+            font-family: 'Space Grotesk', 'Noto Sans KR', -apple-system, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        h1, h2 {
-            color: #fff;
-            border-bottom: 1px solid #4a034f;
-            padding-bottom: 10px;
-            text-shadow: 0 0 8px #ff0077;
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #1a1a1a;
+            border-bottom: 3px solid #e6ff00;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        p {
-            font-size: 1.05rem;
-        }
-        .highlight {
-            color: #00f0ff;
-            font-weight: bold;
-        }
-        .review-box {
-            background: #0b0114;
-            border: 1px solid #701a75;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-        .btn-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: #00f0ff;
+
+        .header__logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            color: #e6ff00;
             text-decoration: none;
-            border: 1px solid #00f0ff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            background: rgba(0, 240, 255, 0.05);
+            text-shadow: 2px 2px 0 #000;
         }
-        .btn-link:hover {
-            background: #00f0ff;
-            color: #000;
-            box-shadow: 0 0 15px #00f0ff;
+
+        .header__logo:hover {
+            color: #fff;
+            text-shadow: 2px 2px 0 #e6ff00;
+        }
+
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+            border: 2px solid #e6ff00;
+            background: transparent;
+            transition: 0.2s;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: #e6ff00;
+            transition: 0.3s;
+        }
+
+        .hamburger-menu:hover {
+            background: #e6ff00;
+        }
+        .hamburger-menu:hover span {
+            background: #1a1a1a;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: #1a1a1a;
+            border-left: 3px solid #e6ff00;
+            padding: 5rem 2rem 2rem;
+            transition: right 0.4s ease;
+            z-index: 999;
+        }
+
+        .nav.active {
+            right: 0;
+        }
+
+        .nav__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .nav__link {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .nav__link:hover,
+        .nav__link.active {
+            color: #e6ff00;
+            border-bottom-color: #e6ff00;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: 2px solid #e6ff00;
+            color: #e6ff00;
+            font-size: 2rem;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .nav-close:hover {
+            background: #e6ff00;
+            color: #1a1a1a;
+        }
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 7rem 1.5rem 3rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 4px solid #e6ff00;
+            position: relative;
+        }
+
+        .hero::before {
+            content: 'INFO';
+            position: absolute;
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(230, 255, 0, 0.04);
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 0.3em;
+            pointer-events: none;
+        }
+
+        .hero__title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .hero__subtitle {
+            font-size: 1.3rem;
+            color: #ccc;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        .section {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section__title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            border-bottom: 3px solid #e6ff00;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #222;
+            border: 2px solid #333;
+            padding: 1.8rem;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e6ff00;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            border-color: #e6ff00;
+            transform: translateY(-3px);
+        }
+
+        .card__title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e6ff00;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .card__text {
+            color: #bbbbbb;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card__icon {
+            font-size: 2rem;
+            color: #e6ff00;
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-block {
+            background: #222;
+            border: 2px solid #333;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-block__label {
+            font-weight: 700;
+            color: #e6ff00;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-block__value {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-top: 0.3rem;
+        }
+
+        .faq {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #333;
+            padding: 1.2rem 0;
+        }
+
+        .faq-item__question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #e6ff00;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item__question .icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item__question.open .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item__answer {
+            margin-top: 0.8rem;
+            color: #bbbbbb;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item__answer.show {
+            display: block;
+        }
+
+        .cta-banner {
+            background: #e6ff00;
+            color: #1a1a1a;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-top: 3rem;
+            border: 4px solid #1a1a1a;
+        }
+
+        .cta-banner__title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+        }
+
+        .cta-banner__phone {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-banner__text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            background: #111;
+            border-top: 3px solid #e6ff00;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer__link {
+            color: #e6ff00;
+            text-decoration: none;
+        }
+
+        .footer__link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero__title {
+                font-size: 2.5rem;
+            }
+            .header {
+                padding: 0.6rem 1rem;
+            }
+            .header__logo {
+                font-size: 1.4rem;
+            }
+            .nav {
+                width: 100%;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <a href="/" class="header__logo">마사지링크</a>
+        <div class="hamburger-menu" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
-<div class="report-shell">
-    <h1>REPORT: 마포 가성비 마사지 정찰제 운영 개요</h1>
-    <p>
-        어이 브로, 형이 주도하여 마운트한 <span class="highlight">마포 마사지 정찰제 가이드망</span>의 정식 소개 보고서이다.
-        우리는 여의도와 용산, 마포역 비즈니스 링을 관통하며 매일 과도한 격무에 시달리는 브로들의 뇌세포 피로를 리셋하고, 
-        가장 정직한 가성비 요율을 백포 보장하여 질 안 좋은 삐끼들의 메모리 오염 바가지 장난질을 격리 방어하기 위해 조직된 정보망이다.
-    </p>
+    <nav class="nav" id="navMenu">
+        <button class="nav-close" onclick="toggleNav()">✕</button>
+        <ul class="nav__list">
+            <li><a href="/" class="nav__link">홈</a></li>
+            <li><a href="/info" class="nav__link active">정보</a></li>
+            <li><a href="/price" class="nav__link">가격</a></li>
+            <li><a href="/review" class="nav__link">후기</a></li>
+            <li><a href="/contact" class="nav__link">연락처</a></li>
+        </ul>
+    </nav>
 
-    <h2>🎮 엘든링 데이터마이닝과 에코 지연 밸런싱 공명</h2>
-    <p>
-        이전 메인 그리드에서 이미 강조했듯이, 엘든링의 미사용 극비 주석 코드에서 증명된 전뇌 릴렉스 공학 공식은 허구가 아닌 물리적 사실이야. 
-        마포 일대의 불법 유흥 삐끼들은 브로들의 뇌를 피로하게 세뇌해서 바가지 추가금을 영수시키려 하지만, 
-        우리는 1:1 예약 핫라인 다이얼(<span class="highlight">010-6279-0862</span>)을 단일 진실 공급원으로 삼아 모든 요금 꼼수를 완전 차단한다.
-    </p>
-    <p>
-        음질을 최고로 뽑아내는 무선 EQ 하드웨어와 에코 딜레이 루프의 공명이 브로의 뇌세포 이완을 완벽하게 주도하므로, 
-        마포를 방문하는 브로들은 오직 마음 편안히 일과의 고단함을 잊고 진정한 쾌감을 마운트할 수 있는 것이지 브로.
-    </p>
+    <section class="hero">
+        <h1 class="hero__title">마포 마사지 링크<br>모든 정보</h1>
+        <p class="hero__subtitle">형님들이 직접 확인하고 인증한 마포 최고의 마사지샵. 위치, 가격, 서비스, 모든 걸 공개합니다.</p>
+    </section>
 
-    <h2>📊 마포역 물류/IT 밸리 실제 이용자 UGC 정보 피드</h2>
-    <p>
-        다음 검증 피드는 마포역 핵심 비즈니스 단지에서 직접 예약하고 극적인 인지 릴렉스를 경험한 브로들의 내돈내산 요약 정보 노드이다:
-    </p>
-    
-    <div class="review-box">
-        <h3>"마포 무역 유통 최브로" ⭐⭐⭐⭐⭐</h3>
-        <p>매주 거래처 미팅 2차 조율할 때마다 바가지 요금 때문에 신경이 곤두섰는데, 형이 세팅해준 정찰가 핫라인 통화 후 완전히 예약 마스터가 되었습니다. 요율 정직성 100%입니다.</p>
-    </div>
+    <section class="section">
+        <h2 class="section__title">📍 위치 &amp; 오시는 길</h2>
+        <div class="detail-block">
+            <div class="detail-block__label">주소</div>
+            <div class="detail-block__value">서울 마포구 성산동 ○○번지 2층<br>홍대입구역 3번출구에서 도보 7분</div>
+        </div>
+        <div class="detail-block">
+            <div class="detail-block__label">영업 시간</div>
+            <div class="detail-block__value">매일 10:00 - 23:00 (연중무휴)<br>마지막 접수 22:00</div>
+        </div>
+        <div class="detail-block">
+            <div class="detail-block__label">주차</div>
+            <div class="detail-block__value">건물 뒷편 주차장 3대 가능 (무료)<br>대중교통 이용 적극 추천</div>
+        </div>
+    </section>
 
-    <div class="review-box">
-        <h3>"여의도 금융투자 한대표" ⭐⭐⭐⭐⭐</h3>
-        <p>인터넷 가짜 알바 블로그들에 속아서 매번 덤터기 마찰이 심했는데, 010-6279-0862 예약 연결로 최고의 무선 마이크 사운드 룸을 선점했습니다. 돈 아깝지 않은 대뇌 이완을 즐기고 갑니다.</p>
-    </div>
-
-    <div class="review-box">
-        <h3>"IT 인프라 지부장" ⭐⭐⭐⭐⭐</h3>
-        <p>이 신스웨이브 분위기 공간도 매력적이지만 추가금을 절대 받지 않는 형의 깔끔한 가이드 시스템에 대만족했습니다. 무조건 핫라인 추천 박고 갑니다 브로!</p>
-    </div>
-
-    <p>
-        더 이상 악질 업주들의 가짜 트래픽 정보와 삐끼들의 오염 패킷에 자산을 갈취당하지 마라.
-        아래 핫라인으로 예약 전화를 걸어 마포 최고의 VIP 룸을 즉시 획득해라 브로!
-    </p>
-
-    <a href="index.html" class="btn-link">← 메인 그리드로 복귀</a>
-    <a href="tel:010-6279-0862" class="btn-link" style="border-color: #00f0ff; color: #fff; background: #701a75;">📞 즉시 예약 통화</a>
-</div>
-
+    <section class="section">
+        <h2 class="section__title">💆 서비스 상세</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card__icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h3 class="card__title">전신 마사지</h3>
+                <p class="card__text">머리부터 발끝까지 시원하게. 형님들이 제일 많이 찾는 코스예요. 60분 / 80분 / 120분 선택 가능.</p>
+                <p class="card__text"><strong>가격:</strong> 60분 7만원 / 80분 9만원 / 120분 13만원</p>
+            </div>
+            <div class="card">
+                <div class="card__icon"><i class="fas fa-fire"></i></div>
+                <h3 class="card__title">스포츠 마사지</h3>
+                <p class="card__text">운동 후 근육 뭉침, 피로 회복. 강도 센 걸 원하는 형님들께 강추. 60분 / 90분.</p>
+                <p class="card__text"><strong>가격:</strong> 60분 8만원 / 90분 11만원</p>
+            </div>
+            <div class="card">
+                <div class="card__icon"><i class="fas fa-spa"></i></div>
+                <h3 class="card__title">아로마 테라피</h
 </body>
 </html>

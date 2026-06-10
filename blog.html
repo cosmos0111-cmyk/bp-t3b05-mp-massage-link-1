@@ -3,80 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기밀 정보실: 엘든링 미사용 주석과 뇌 신경 공진 기술 - blog</title>
-    <meta name="description" content="엘든링 미사용 주석과 뇌 신경 공진 기술! 미야자키 히데타카의 극비 이완 음향 세팅과 마포 룸의 결합 원리.">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <title>마포 마사지 링크 | 블로그</title>
+    <meta name="description" content="마포 형님들이 인정한 진짜 마사지 블로그 – 거친 손맛과 친절함의 비밀, 가격 비교, 후기까지 다 공개합니다. 지금 010-6279-0862로 전화주세요!">
+    <meta name="keywords" content="마포 마사지, 마포 마사지 링크, 블로그, 마사지 후기, 마포 마사지 추천, 마포 마사지 가격">
+    <link rel="canonical" href="https://t3b05-mp-massage-link-1.vercel.app/blog">
+    <!-- Open Graph -->
+    <meta property="og:title" content="마포 마사지 링크 | 블로그 – 형님들이 인정한 진짜 마사지 이야기">
+    <meta property="og:description" content="마포에서 마사지 고민? 여기 다 있다! 내돈내산 후기, 꿀팁, 실시간 가격까지. 전화 한 통이면 해결! 010-6279-0862">
+    <meta property="og:image" content="https://t3b05-mp-massage-link-1.vercel.app/og-blog.jpg">
+    <meta property="og:url" content="https://t3b05-mp-massage-link-1.vercel.app/blog">
+    <meta property="og:type" content="article">
+    <!-- 디자인 시스템 CSS (Brutalist Avantgarde + kr-acid-yellow) -->
     <style>
-        body {
-            background-color: #0d0216;
-            color: #e2e8f0;
-            font-family: 'Outfit', 'Inter', sans-serif;
+        :root {
+            --acid-yellow: #FFD700;
+            --acid-yellow-dark: #E6C200;
+            --brutalist-black: #1a1a1a;
+            --brutalist-white: #f5f5f5;
+            --brutalist-gray: #2a2a2a;
+            --brutalist-border: 4px solid var(--brutalist-black);
+            --brutalist-shadow: 8px 8px 0 var(--brutalist-black);
+            --font-display: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+            --font-body: 'Courier New', Courier, monospace;
+        }
+        * {
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.8;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .post-container {
-            max-width: 800px;
+        body {
+            font-family: var(--font-body);
+            background: var(--acid-yellow);
+            color: var(--brutalist-black);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        /* 햄버거 메뉴 패턴 */
+        .hamburger-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--brutalist-black);
+            color: var(--acid-yellow);
+            border-bottom: var(--brutalist-border);
+        }
+        .hamburger-menu .logo a {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--acid-yellow);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hamburger-menu .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .hamburger-menu .nav-links a {
+            color: var(--acid-yellow);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .hamburger-menu .nav-links a:hover,
+        .hamburger-menu .nav-links a.active {
+            border-bottom-color: var(--acid-yellow);
+        }
+        .hamburger-menu .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger-menu .menu-toggle span {
+            background: var(--acid-yellow);
+            height: 3px;
+            width: 28px;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            .hamburger-menu .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--brutalist-black);
+                padding: 2rem;
+                text-align: center;
+                z-index: 100;
+            }
+            .hamburger-menu .nav-links.open {
+                display: flex;
+            }
+            .hamburger-menu .menu-toggle {
+                display: flex;
+            }
+        }
+        /* 컨테이너 */
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            background: #16062a;
-            border: 1px solid #4a034f;
-            border-radius: 8px;
-            padding: 40px;
+            padding: 2rem;
         }
-        h1, h2 {
-            color: #fff;
-            border-bottom: 1px solid #4a034f;
-            padding-bottom: 10px;
-            text-shadow: 0 0 8px #ff0077;
+        /* 블로그 포스트 스타일 */
+        .blog-post {
+            background: var(--brutalist-white);
+            border: var(--brutalist-border);
+            box-shadow: var(--brutalist-shadow);
+            padding: 2rem;
+            margin-top: 2rem;
         }
-        p {
+        .blog-post h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            color: var(--brutalist-black);
+            border-left: 8px solid var(--acid-yellow-dark);
+            padding-left: 1rem;
+        }
+        .blog-post .meta {
+            font-size: 0.9rem;
+            color: var(--brutalist-gray);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed var(--brutalist-gray);
+            padding-bottom: 0.5rem;
+        }
+        .blog-post .meta span {
+            background: var(--acid-yellow);
+            padding: 2px 8px;
+            font-weight: bold;
+        }
+        .blog-post p {
+            margin-bottom: 1.2rem;
             font-size: 1.05rem;
         }
-        .highlight {
-            color: #00f0ff;
+        .blog-post .highlight-box {
+            background: var(--acid-yellow);
+            border-left: 6px solid var(--brutalist-black);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            font-weight: bold;
         }
-        .back-link {
+        .blog-post .cta-button {
             display: inline-block;
-            margin-top: 25px;
-            color: #00f0ff;
+            background: var(--brutalist-black);
+            color: var(--acid-yellow);
+            padding: 1rem 2rem;
             text-decoration: none;
-            border: 1px solid #00f0ff;
-            padding: 10px 20px;
-            border-radius: 4px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border: 3px solid var(--brutalist-black);
+            box-shadow: 4px 4px 0 var(--acid-yellow-dark);
+            transition: all 0.1s ease;
+            margin: 1rem 0;
         }
-        .back-link:hover {
-            background: #00f0ff;
-            color: #000;
+        .blog-post .cta-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--acid-yellow-dark);
+        }
+        /* 푸터 */
+        footer {
+            background: var(--brutalist-black);
+            color: var(--acid-yellow);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: var(--brutalist-border);
+        }
+        footer a {
+            color: var(--acid-yellow);
+            text-decoration: underline;
+        }
+        footer .phone {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
+    <!-- 네비게이션 (햄버거 메뉴 패턴) -->
+    <nav class="hamburger-menu">
+        <div class="logo">
+            <a href="/">마포 마사지 링크</a>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">홈</a></li>
+            <li><a href="/about">소개</a></li>
+            <li><a href="/blog" class="active">블로그</a></li>
+            <li><a href="/contact">연락처</a></li>
+        </ul>
+    </nav>
 
-<div class="post-container">
-    <h1>[MEMO] 엘든링 데이터마이닝과 공간 공명 쾌감 공식</h1>
-    <p>
-        반갑다 브로! 형이 오늘 풀 기밀 로그는 프롬 소프트웨어 개발 노드의 깊은 뜯어보기(Reverse Engineering)를 통해 드러난 
-        우리 뇌 신경과 공간 음향의 공명 물리학 팁이야.
-    </p>
-    <p>
-        엘든링의 천재 데이터마이너들이 복원해낸 주석에는, 인간이 시청각적으로 격자 무늬 조명을 인지하고 
-        마이크의 에코 지연을 320ms 황금률로 매칭하여 노래를 흥얼거리거나 테라피를 받을 때, 
-        과도한 격무로 활성화되었던 전두엽의 코르티솔 수치가 수직 하락하여 평온 세션으로 마운트된다는 생리학 비밀이 기재되어 있었어.
-    </p>
-    <p>
-        이런 공간의 힐링 작용을 실생활에서 누리는 법은 간단해:
-    </p>
-    <ul>
-        <li>첫째, 가짜 삐끼들이 난무하는 난잡한 인터넷 광고 채널을 완벽하게 걸러라.</li>
-        <li>둘째, 덤터기 없이 정직한 가성비 요율을 백프로 보장하는 형의 단일 포트 정보망을 활용해라.</li>
-        <li>셋째, 형이 직접 마포의 요지를 엄선해놓은 다이렉트 핫라인 다이얼(010-6279-0862)로 전화를 걸어 룸을 마운트해라.</li>
-    </ul>
-    <p>
-        형이 보장하는 마포 최고의 레트로 신스웨이브 공간 스펙은 언제나 메인 콘솔인 <a href="index.html" class="highlight">마포 마사지 링크</a>에서 동기화할 수 있으니, 
-        바가지 고통 없이 스트레스를 소거하고 전뇌 릴렉스를 체감할 준비가 됐다면 즉시 핫라인 포트로 다이얼을 다이렉트 콜하라구 브로!
-    </p>
+    <!-- 메인 콘텐츠: 블로그 글 -->
+    <main class="container">
+        <article class="blog-post">
+            <h1>마포에서 진짜 마사지 찾는 법 – 형이 다 알려준다</h1>
+            <div class="meta">
+                작성자: <span>마포 형님</span> | 날짜: 2025.04.08 | 카테고리: <span>꿀팁/후기</span>
+            </div>
 
-    <a href="index.html" class="back-link">← 메인 그리드로 복귀</a>
-</div>
+            <p>야, 형! 오늘은 마포에서 뼛속까지 시원한 마사지 받는 법을 진짜 다 알려줄게. 나처럼 허리 아프고 어깨 뻐근한 직장인들, 자영업자들, 아니면 그냥 하루 일하고 쪼그라든 몸뚱이 좀 풀고 싶은 사람들 – 여기 집중해라.</p>
 
+            <p>내가 마포에서 마사지 3년 동안 진짜 여러 군데 가봤어. 홍대 근처 비싼 곳, 공덕동 쪽 무명 샵, 심지어 동네 발 마사지까지. 근데 결론은 하나야 – <strong>마포 마사지 링크</strong>만한 데가 없다. 거짓말 안 하고, 내가 쓰는 돈 대비 효과가 미친 수준이야.</p>
+
+            <div class="highlight-box">
+                🔥 핵심 요약: 저렴한 가격 + 확실한 손맛 + 친절함 = 마포 마사지 링크. 전화 한 통이면 예약 끝! 010-6279-0862
+            </div>
+
+            <p>처음 갔을 때 좀 긴장했어. 왜냐면 가게 분위기가 ‘아 씨 여기 비싸겠다’ 싶었거든. 근데 막상 가격 물어보니까 완전 합리적이야. 게다가 마사지사 분들이 진짜 프로다. 내가 "어깨랑 허리 좀 봐주세요" 했더니 바로 포인트 찝어내더라고. "형, 여기 담 걸렸네요" 이러면서 팔꿈치로 콕콕 – 아프지만 시원해 미치는 줄 알았어.</p>
+
+            <p>두 번째 팁은 <strong>예약할 때 '마포 마사지 링크 보고 왔어요'</strong>라고 말하는 거야. 그러면 서비스로 발 마사지 10분 더 해준다니까? 나만 알고 있던 꿀팁인데 형들을 위해 공개한다. 안 하면 손해야.</p>
+
+            <p>그리고 가격. 요즘 마사지 한 번 받으려면 기본 8~10만 원은 우스운데, 여기는 5만 원대로 전신 마사지 가능해. 게다가 아로마 오일이랑 찜질까지 포함이야. 진짜 헬. 가성비. 야, 이건 형이 보증한다. 만족 못 하면 내가 전화 받음.</p>
+
+            <div class="highlight-box">
+                📞 지금 바로 전화해: 010-6279-0862 <br> 
+                "블로그 보고 전화했어요" 하면 깜짝 이벤트 있음!
+            </div>
+
+            <p>마지막으로 주의할 점. 마포에는 가짜 마사지도 좀 많아. 간판만 번지르르 하고 막상 가면 실력이 별로인 곳들. 나도 한 번 당했어. 그런데 마포 마사지 링크는 후기랑 추천으로만 운영하는 곳이라 완
 </body>
 </html>
