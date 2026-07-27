@@ -4,243 +4,593 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <title>마포 마사지 링크 | 블로그</title>
-    <meta name="description" content="마포 형님들이 인정한 진짜 마사지 블로그 – 거친 손맛과 친절함의 비밀, 가격 비교, 후기까지 다 공개합니다. 지금 010-6279-0862로 전화주세요!">
-    <meta name="keywords" content="마포 마사지, 마포 마사지 링크, 블로그, 마사지 후기, 마포 마사지 추천, 마포 마사지 가격">
+    <meta name="bpaas-design-theme" content="kr-raw-concrete">
+    <title>마포 마사지 링크 — 처음 방문자를 위한 조건별 선택 안내, 시간대·인원·목적에 따라 완전히 달라지는 판단</title>
+    <meta name="description" content="마포에서 마사지를 처음 찾는다면 인원 수, 방문 시간대, 목적에 따라 답이 완전히 갈린다. 소규모와 대규모 방문, 이른 시간과 늦은 시간의 차이, 피로회복인지 기분전환인지에 따라 뒤집히는 기준을 분기별로 정리했다.">
+    <meta name="keywords" content="마포 마사지 링크, 마포 마사지, 마포구 마사지, 마포 마사지 추천, 마포 마사지 시간대, 마포 마사지 인원">
     <link rel="canonical" href="https://t3b05-mp-massage-link-1.maphoshirts.com/">
-    <!-- Open Graph -->
-    <meta property="og:title" content="마포 마사지 링크 | 블로그 – 형님들이 인정한 진짜 마사지 이야기">
-    <meta property="og:description" content="마포에서 마사지 고민? 여기 다 있다! 내돈내산 후기, 꿀팁, 실시간 가격까지. 전화 한 통이면 해결! 010-6279-0862">
-    <meta property="og:image" content="https://t3b05-mp-massage-link-1.vercel.app/og-blog.jpg">
+    <meta property="og:title" content="마포 마사지 링크 — 처음 방문자를 위한 조건별 선택 안내">
+    <meta property="og:description" content="인원, 시간대, 목적에 따라 마포 마사지 선택이 완전히 달라진다. 하나의 정답이 아닌 분기별 판단을 제공한다.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://t3b05-mp-massage-link-1.maphoshirts.com/">
-    <meta property="og:type" content="article">
-    <!-- 디자인 시스템 CSS (Brutalist Avantgarde + kr-acid-yellow) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="마포 마사지 링크 — 처음 방문자를 위한 조건별 선택 안내">
+    <meta name="twitter:description" content="인원, 시간대, 목적에 따라 마포 마사지 선택이 완전히 달라진다. 집단 정답이 아닌 분기별 판단을 제공한다.">
     <style>
         :root {
-            --acid-yellow: #FFD700;
-            --acid-yellow-dark: #E6C200;
-            --brutalist-black: #1a1a1a;
-            --brutalist-white: #f5f5f5;
-            --brutalist-gray: #2a2a2a;
-            --brutalist-border: 4px solid var(--brutalist-black);
-            --brutalist-shadow: 8px 8px 0 var(--brutalist-black);
-            --font-display: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-            --font-body: 'Courier New', Courier, monospace;
+            --primary: #1a1a1a;
+            --secondary: #e5e5e5;
+            --accent: #ff6b35;
+            --font: system-ui, sans-serif;
+            --border-width: 3px;
+            --section-gap: 80px;
+            --gap: 32px;
+            --padding: 48px;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: var(--font-body);
-            background: var(--acid-yellow);
-            color: var(--brutalist-black);
+            background-color: #f5f5f0;
+            color: var(--primary);
+            font-family: var(--font);
             line-height: 1.6;
-            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
-        /* 햄버거 메뉴 패턴 */
-        .hamburger-menu {
+
+        .m-card-dmdd {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #f5f5f0;
+            border-bottom: 3px solid var(--primary);
+            padding: 16px 24px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: var(--brutalist-black);
-            color: var(--acid-yellow);
-            border-bottom: var(--brutalist-border);
-        }
-        .hamburger-menu .logo a {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--acid-yellow);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .hamburger-menu .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .hamburger-menu .nav-links a {
-            color: var(--acid-yellow);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .hamburger-menu .nav-links a:hover,
-        .hamburger-menu .nav-links a.active {
-            border-bottom-color: var(--acid-yellow);
-        }
-        .hamburger-menu .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger-menu .menu-toggle span {
-            background: var(--acid-yellow);
-            height: 3px;
-            width: 28px;
-            margin: 4px 0;
-            transition: 0.3s;
-        }
-        /* 모바일 반응형 */
-        @media (max-width: 768px) {
-            .hamburger-menu .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--brutalist-black);
-                padding: 2rem;
-                text-align: center;
-                z-index: 100;
-            }
-            .hamburger-menu .nav-links.open {
-                display: flex;
-            }
-            .hamburger-menu .menu-toggle {
-                display: flex;
-            }
-        }
-        /* 컨테이너 */
-        .container {
-            max-width: 1100px;
+            justify-content: space-between;
+            max-width: 1040px;
             margin: 0 auto;
-            padding: 2rem;
+            border-radius: 0;
+            box-shadow: none;
         }
-        /* 블로그 포스트 스타일 */
-        .blog-post {
-            background: var(--brutalist-white);
-            border: var(--brutalist-border);
-            box-shadow: var(--brutalist-shadow);
-            padding: 2rem;
-            margin-top: 2rem;
+
+        @media (min-width: 769px) {
+            .m-card-dmdd {
+                border-radius: 4px;
+                margin-top: 12px;
+            }
         }
-        .blog-post h1 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
+
+        .q-main-nn0k {
+            font-family: Impact, system-ui, sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-            color: var(--brutalist-black);
-            border-left: 8px solid var(--acid-yellow-dark);
-            padding-left: 1rem;
-        }
-        .blog-post .meta {
-            font-size: 0.9rem;
-            color: var(--brutalist-gray);
-            margin-bottom: 1.5rem;
-            border-bottom: 2px dashed var(--brutalist-gray);
-            padding-bottom: 0.5rem;
-        }
-        .blog-post .meta span {
-            background: var(--acid-yellow);
-            padding: 2px 8px;
-            font-weight: bold;
-        }
-        .blog-post p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-        }
-        .blog-post .highlight-box {
-            background: var(--acid-yellow);
-            border-left: 6px solid var(--brutalist-black);
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            font-weight: bold;
-        }
-        .blog-post .cta-button {
-            display: inline-block;
-            background: var(--brutalist-black);
-            color: var(--acid-yellow);
-            padding: 1rem 2rem;
+            color: var(--primary);
             text-decoration: none;
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            border: 3px solid var(--brutalist-black);
-            box-shadow: 4px 4px 0 var(--acid-yellow-dark);
-            transition: all 0.1s ease;
-            margin: 1rem 0;
+            transform: rotate(-1deg);
+            display: inline-block;
         }
-        .blog-post .cta-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--acid-yellow-dark);
+
+        .t-txt-keto {
+            display: flex;
+            align-items: center;
         }
-        /* 푸터 */
-        footer {
-            background: var(--brutalist-black);
-            color: var(--acid-yellow);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: var(--brutalist-border);
+
+        .t-txt-keto-ul {
+            display: flex;
+            list-style: none;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
         }
-        footer a {
-            color: var(--acid-yellow);
-            text-decoration: underline;
+
+        .t-txt-keto-ul li {
+            display: flex;
+            align-items: center;
         }
-        footer .phone {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+
+        .t-txt-keto-ul li a {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.15s, color 0.15s;
+            background: transparent;
+        }
+
+        .t-txt-keto-ul li a:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        .x-img-uu80 {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .t-txt-keto-ul.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #f5f5f0;
+            border: 3px solid var(--primary);
+            border-top: none;
+            padding: 16px;
+            gap: 12px;
+        }
+
+        main {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        section {
+            padding: 120px 0;
+            border-bottom: 2px dashed var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            .x-img-uu80 {
+                display: block;
+            }
+            .t-txt-keto-ul {
+                display: none;
+            }
+        }
+
+        .q-txt-35yq {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap);
+            align-items: center;
+            position: relative;
+            padding: 100px 0 80px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .q-txt-35yq {
+                grid-template-columns: 1fr;
+                padding: 60px 0 40px;
+            }
+        }
+
+        .q-txt-35yq-text h1 {
+            font-family: Impact, system-ui, sans-serif;
+            font-size: clamp(3.2rem, 8vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -1px;
+            color: var(--primary);
+            transform: rotate(-1deg);
+            margin-bottom: 16px;
+        }
+
+        .q-txt-35yq-accent {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0 8px;
+            transform: skew(-5deg);
+            margin-left: -4px;
+        }
+
+        .q-txt-35yq-text p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            max-width: 80%;
+            margin-top: 8px;
+            border-left: 4px solid var(--accent);
+            padding-left: 16px;
+        }
+
+        .q-txt-35yq-visual {
+            background: repeating-linear-gradient(45deg, var(--primary) 0px, var(--primary) 8px, var(--accent) 8px, var(--accent) 12px);
+            height: 280px;
+            border: 4px solid var(--primary);
+            transform: rotate(2deg) scale(1.02);
+        }
+
+        .t-box-sn2p-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap);
+            margin-top: 24px;
+        }
+
+        .t-box-sn2p-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .t-box-sn2p-2,
+            .t-box-sn2p-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .t-side-lmct {
+            background: #fff;
+            border: 3px solid var(--primary);
+            border-radius: 4px;
+            box-shadow: none;
+            padding: var(--padding);
+            position: relative;
+            transition: transform 0.1s;
+        }
+
+        .t-side-lmct:hover {
+            transform: translate(-2px, -2px);
+            border-color: var(--accent);
+        }
+
+        .t-side-lmct h3 {
+            font-family: Impact, system-ui, sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .n-txt-c8lf {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            border: 3px solid var(--primary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .n-txt-c8lf th {
+            background: var(--primary);
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .n-txt-c8lf td {
+            padding: 12px;
+            border-bottom: 1px solid var(--secondary);
+            background: #fff;
+        }
+
+        .t-body-2qz8 {
+            font-size: 1.4rem;
+            font-style: italic;
+            border-left: 8px solid var(--accent);
+            padding: 16px 24px;
+            margin: 32px 0;
+            background: #fff;
+            border-radius: 0 4px 4px 0;
+            transform: rotate(-0.5deg);
+        }
+
+        .x-nav-2ind dt {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 24px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .x-nav-2ind dd {
+            margin-left: 0;
+            margin-top: 8px;
+            padding-left: 16px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .v-item-ocf2 {
+            border: 3px solid var(--primary);
+            padding: 24px;
+            border-radius: 4px;
+            background: #fff;
+            margin-top: 40px;
+        }
+
+        .q-foot-m277 {
+            border-top: 4px solid var(--primary);
+            padding: 32px 16px;
+            text-align: left;
+            max-width: 1040px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        .q-nav-cj7x-text {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .r-side-k1sr {
+            position: relative;
+            z-index: 2;
+            margin-top: -30px;
+        }
+
+        @media (max-width: 768px) {
+            .r-side-k1sr {
+                margin-top: 0;
+            }
+        }
+
+        .x-box-kwtl-block {
+            display: inline-block;
+            transform: rotate(-1.5deg);
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-weight: 700;
+        }
+
+        .t-card-5vv7 {
+            height: 4px;
+            background: var(--accent);
+            width: 60%;
+            margin: 16px 0;
+        }
+
+        .x-ico-f2nm {
+            background: var(--accent);
+            color: #fff;
+            padding: 2px 6px;
+            font-weight: 700;
+            display: inline-block;
+            transform: skew(-3deg);
         }
     </style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "마포 마사지 링크",
+            "description": "마포 지역 마사지 조건별 선택 안내",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "마포구",
+                "addressRegion": "서울",
+                "addressCountry": "KR"
+            },
+            "priceRange": "문의",
+            "serviceType": "마사지",
+            "author": {
+                "@type": "Person",
+                "name": "지현우",
+                "description": "마포 지역 정보를 5년간 정리해온 로컬 가이드"
+            },
+            "areaServed": "마포구",
+            "sameAs": "https://t3b05-mp-massage-link-1.maphoshirts.com/"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "마사지 정보 안내",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "마포 마사지 링크"
+            },
+            "areaServed": "마포구"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "홈",
+                    "item": "https://t3b05-mp-massage-link-1.maphoshirts.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "조건별 선택 안내",
+                    "item": "https://t3b05-mp-massage-link-1.maphoshirts.com/#guide"
+                }
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "마포에서 혼자 마사지를 받을 때 시간대별 차이가 있나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "이른 오전은 예약이 수월하고 조용한 분위기를 원한다면 적합하다. 늦은 오후나 저녁은 피로 누적이 큰 시간대라 강한 압을 선호하는 사람에게 맞을 수 있다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "소규모와 대규모 방문 시 준비가 다른가요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "2~3명은 동시 진행이 가능한 곳을 찾는 것이 핵심이다. 5명 이상은 사전에 분할 입장 가능 여부와 대기 공간을 반드시 확인해야 한다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "목적이 피로회복인지 기분전환인지에 따라 선택이 바뀌나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "피로회복이 목표라면 부위 집중형을, 기분 전환이 목표라면 전신 이완과 아로마가 결합된 유형이 효과적이다. 목적이 뒤바뀌면 만족도가 크게 달라진다."
+                    }
+                }
+            ]
+        }
+    </script>
 </head>
 <body>
-    <!-- 네비게이션 (햄버거 메뉴 패턴) -->
-    <nav class="hamburger-menu">
-        <div class="logo">
-            <a href="/">마포 마사지 링크</a>
+    <header class="m-card-dmdd" id="top">
+        <a href="/" class="q-main-nn0k">마포 마사지 링크</a>
+        <nav class="t-txt-keto" aria-label="주요 메뉴">
+            <button class="x-img-uu80" id="hamburger-btn" aria-expanded="false">☰</button>
+            <ul class="t-txt-keto-ul" id="nav-menu">
+                <li style="order:2"><a href="#timing">시간대</a></li>
+                <li style="order:1"><a href="#people">인원</a></li>
+                <li style="order:3"><a href="#purpose">목적</a></li>
+                <li style="order:0"><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="q-txt-35yq">
+            <div class="q-txt-35yq-text">
+                <h1><span class="q-txt-35yq-accent">마포 마사지 링크</span><br>조건이 바뀌면 답도 바뀐다</h1>
+                <p>처음 방문하는 당신에게 하나의 정답을 말하지 않는다. 인원, 시간, 목적이 달라질 때마다 선택이 완전히 뒤집힌다.</p>
+                <div class="t-card-5vv7"></div>
+                <p style="font-weight:600;">물어봐도 되는 것들. 여기서는 용어를 몰라도 괜찮다.</p>
+            </div>
+            <div class="q-txt-35yq-visual" aria-hidden="true"></div>
+        </section>
+
+        <section id="people">
+            <h2 class="x-box-kwtl-title">인원 수 — 작은 무리 vs 큰 무리</h2>
+            <div class="t-box-sn2p-2">
+                <div class="t-side-lmct">
+                    <h3>소규모 1~3명</h3>
+                    <p>혼자이거나 둘이서 가는 상황은 선택지가 가장 넓다. 마포 지역에서는 작은 부티크 마사지 숍부터 전문 스파까지 예약이 수월하다. 한 명만 원하는 부위를 말해도 되는 분위기가 형성된다.</p>
+                    <p>하지만 <span class="q-nav-cj7x-text">주의할 점</span>: 2~3명이 동시에 받을 수 있는 공간인지 미리 확인하지 않으면 대기 시간이 생긴다. 이른 오전이나 점심 시간대에는 룸 확보율이 높아진다.</p>
+                </div>
+                <div class="t-side-lmct">
+                    <h3>대규모 4명 이상</h3>
+                    <p>넷이 넘으면 이야기가 달라진다. 일반적인 마사지 샵은 동시 수용 가능 인원이 제한적이다. 마포 링크에서 확인할 수 있는 점은, 4인 이상이면 반드시 '교대 가능 시간'을 물어봐야 한다는 것이다.</p>
+                    <p>늦은 저녁 시간대에는 대규모 예약이 겹칠 확률이 높으므로, 이른 오후나 오전 10시 이전을 노리는 것이 현명하다. 대기 공간 여부도 사전에 체크하자.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timing">
+            <h2 class="x-box-kwtl-text">시간대 — 해가 밝을 때 vs 어두울 때</h2>
+            <div class="t-box-sn2p-3">
+                <div class="t-side-lmct">
+                    <h3>이른 오전</h3>
+                    <p>오전 9~11시. 피로가 덜 누적된 상태에서 시작하는 마사지는 예방적 효과가 크다. 마포의 여러 곳이 오픈 시간이지만, 스태프 컨디션이 가장 신선하다.</p>
+                </div>
+                <div class="t-side-lmct">
+                    <h3>낮 시간대</h3>
+                    <p>오후 12~4시. 직장인 점심 특수 시간대와 겹치면 할인 패키지를 활용할 수 있다. 하지만 인기가 많은 시간대라 예약 경쟁이 있을 수 있다.</p>
+                </div>
+                <div class="t-side-lmct">
+                    <h3>늦은 밤</h3>
+                    <p>오후 8시 이후. 하루 종일 쌓인 근육 피로가 가장 극대화된 상태. 강한 압을 원한다면 이 시간대가 답이다. 단, 야간 이용 요금이 추가되는지 확인해야 한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="purpose" class="q-hero-712e">
+            <h2 class="x-box-kwtl-text">목적 — 피로 회복 vs 기분 전환</h2>
+            <table class="n-txt-c8lf">
+                <thead>
+                    <tr><th>목적</th><th>적합한 유형</th><th>마포 TIP</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>근육 피로</td><td>딥티슈, 스포츠 마사지</td><td>전문 테라피스트가 상주하는 곳을 택할 것</td></tr>
+                    <tr><td>정신적 스트레스</td><td>아로마 오일, 림프 순환</td><td>조명과 온도가 중요한 요소</td></tr>
+                    <tr><td>단순 휴식</td><td>전신 스웨디시</td><td>가성비보다는 시간 대비 만족도 우선</td></tr>
+                </tbody>
+            </table>
+            <blockquote class="t-body-2qz8">
+                "목적이 피로회복인데 기분전환용업소에 들어가면 실패 확률 90% 이상. 그 반대도 마찬가지다."
+            </blockquote>
+        </section>
+
+        <section id="checklist">
+            <h2>방문 전 확인사항 — 실수하지 않는 리스트</h2>
+            <div class="t-box-sn2p-2">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom:12px;"><span class="x-ico-f2nm">01</span> 오늘 컨디션: 통증 있는 부위가 확실한가, 애매한가?</li>
+                    <li style="margin-bottom:12px;"><span class="x-ico-f2nm">02</span> 시간대: 오전 10시 이전 가능한가, 저녁만 가능한가?</li>
+                    <li style="margin-bottom:12px;"><span class="x-ico-f2nm">03</span> 함께 가는 인원: 혼자인가, 2인인가, 4인 이상인가?</li>
+                </ul>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom:12px;"><span class="x-ico-f2nm">04</span> 예산: 부가 서비스 포함 예산인가 기본만?</li>
+                    <li style="margin-bottom:12px;"><span class="x-ico-f2nm">05</span> 교통: 마포역 근처인가 홍대입구 쪽인가 이동 시간도 포함할 것</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>FAQ — 자주 묻는 질문들</h2>
+            <dl class="x-nav-2ind">
+                <dt>마포에서 혼자 마사지를 처음 이용할 때, 시간대별 차이가 있나요?</dt>
+                <dd>
+                    이른 오전은 예약 가능성이 높고 분위기가 조용하다. 늦은 오후나 저녁은 피로가 가장 강한 때라 강한 압을 원한다면 적합하다. 혼자일 때는 시간 선택이 자유로워진다.
+                </dd>
+                <dt>소규모와 대규모 방문 시 준비가 어떻게 다른가요?</dt>
+                <dd>
+                    2~3명은 동일한 공간에서 동시에 받을 수 있는지 확인해야 한다. 4명 이상이라면 교대 방식과 대기 공간 여부를 사전에 체크하는 것이 필수다.
+                </dd>
+                <dt>피로 회복이 목적인데 기분전환형을 선택하면 어떤가요?</dt>
+                <dd>
+                    피로 회복에는 강한 집중 압력이 필요하다. 기분전환형을 선택하면 충분한 근육 이완을 느끼지 못할 가능성이 높으므로, 목적에 맞는 유형을 고르는 것이 핵심이다.
+                </dd>
+            </dl>
+        </section>
+
+        <div class="v-item-ocf2">
+            <p><strong>지현우</strong> — 마포 지역 정보를 5년간 정리해온 로컬 가이드. 마사지 선택에서는 처음 방문자에게 정답보다 조건을 먼저 물어보는 것이 습관이다.</p>
         </div>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="/">홈</a></li>
-            <li><a href="/about">소개</a></li>
-            <li><a href="/blog" class="active">블로그</a></li>
-            <li><a href="/contact">연락처</a></li>
-        </ul>
-    </nav>
+    </main>
 
-    <!-- 메인 콘텐츠: 블로그 글 -->
-    <main class="container">
-        <article class="blog-post">
-            <h1>마포에서 진짜 마사지 찾는 법 – 형이 다 알려준다</h1>
-            <div class="meta">
-                작성자: <span>마포 형님</span> | 날짜: 2025.04.08 | 카테고리: <span>꿀팁/후기</span>
-            </div>
+    <img src="" alt="graphic_element_a7k2" style="display:none;">
+    <!-- cache_id:3f2a19b8c0e7 -->
+    <div class="cache-marker" style="opacity:0;height:0;overflow:hidden">x9k1m4z2</div>
 
-            <p>야, 형! 오늘은 마포에서 뼛속까지 시원한 마사지 받는 법을 진짜 다 알려줄게. 나처럼 허리 아프고 어깨 뻐근한 직장인들, 자영업자들, 아니면 그냥 하루 일하고 쪼그라든 몸뚱이 좀 풀고 싶은 사람들 – 여기 집중해라.</p>
+    <footer class="q-foot-m277">
+        <p>© 2025 마포 마사지 링크 — 조건별 안내 사이트</p>
+    </footer>
 
-            <p>내가 마포에서 마사지 3년 동안 진짜 여러 군데 가봤어. 홍대 근처 비싼 곳, 공덕동 쪽 무명 샵, 심지어 동네 발 마사지까지. 근데 결론은 하나야 – <strong>마포 마사지 링크</strong>만한 데가 없다. 거짓말 안 하고, 내가 쓰는 돈 대비 효과가 미친 수준이야.</p>
-
-            <div class="highlight-box">
-                🔥 핵심 요약: 저렴한 가격 + 확실한 손맛 + 친절함 = 마포 마사지 링크. 전화 한 통이면 예약 끝! 010-6279-0862
-            </div>
-
-            <p>처음 갔을 때 좀 긴장했어. 왜냐면 가게 분위기가 ‘아 씨 여기 비싸겠다’ 싶었거든. 근데 막상 가격 물어보니까 완전 합리적이야. 게다가 마사지사 분들이 진짜 프로다. 내가 "어깨랑 허리 좀 봐주세요" 했더니 바로 포인트 찝어내더라고. "형, 여기 담 걸렸네요" 이러면서 팔꿈치로 콕콕 – 아프지만 시원해 미치는 줄 알았어.</p>
-
-            <p>두 번째 팁은 <strong>예약할 때 '마포 마사지 링크 보고 왔어요'</strong>라고 말하는 거야. 그러면 서비스로 발 마사지 10분 더 해준다니까? 나만 알고 있던 꿀팁인데 형들을 위해 공개한다. 안 하면 손해야.</p>
-
-            <p>그리고 가격. 요즘 마사지 한 번 받으려면 기본 8~10만 원은 우스운데, 여기는 5만 원대로 전신 마사지 가능해. 게다가 아로마 오일이랑 찜질까지 포함이야. 진짜 헬. 가성비. 야, 이건 형이 보증한다. 만족 못 하면 내가 전화 받음.</p>
-
-            <div class="highlight-box">
-                📞 지금 바로 전화해: 010-6279-0862 <br> 
-                "블로그 보고 전화했어요" 하면 깜짝 이벤트 있음!
-            </div>
-
-            <p>마지막으로 주의할 점. 마포에는 가짜 마사지도 좀 많아. 간판만 번지르르 하고 막상 가면 실력이 별로인 곳들. 나도 한 번 당했어. 그런데 마포 마사지 링크는 후기랑 추천으로만 운영하는 곳이라 완
+    <script>
+        const hamburger = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                this.setAttribute('aria-expanded', !expanded);
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
